@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Athena Table Data</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Table Data</h1>
+<table>
+    <thead>
+    <tr>
+        <th th:each="header : ${data[0]}" th:text="${header}"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row : ${data}">
+        <td th:each="col : ${row}" th:text="${col}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
